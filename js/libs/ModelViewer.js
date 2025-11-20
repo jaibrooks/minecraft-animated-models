@@ -804,7 +804,7 @@ function JsonModel(name, rawModel, texturesReference, clipUVs) {
 
       if (!element.rotation.hasOwnProperty('angle'))
         throw new Error('Couldn\'t find "angle" property in "rotation" for element "' + index + '".')
-      if (!(([45, 22.5, 0, -22.5, -45]).indexOf(element.rotation.angle) >= 0))
+      if (typeof element.rotation.angle !== 'number')
         throw new Error('"angle" property in "rotation" for element "' + index + '" is invalid.')
 
 

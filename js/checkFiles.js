@@ -105,7 +105,7 @@ function checkModel(model) {
           errors.push('Couldn\'t find the "angle" property in "rotation" for element "' + index + '".')
           hasAngle = false
         }
-        if (hasAngle && [-45, -22.5, 0, 22.5, 45].indexOf(rot.angle) == -1) {
+        if (hasAngle && typeof rot.angle !== 'number') {
           errors.push('The "angle" property in "rotation" for element "' + index + '" is invalid.')
           hasAngle = false
         }
